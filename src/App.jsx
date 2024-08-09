@@ -20,7 +20,11 @@ function App() {
     })
     .finally(() => setLoading(false))
   }, [])
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-900 text-white'>
       <div className='w-full block'>
@@ -34,4 +38,8 @@ function App() {
   ) : null
 }
 
+<<<<<<< HEAD
 export default App
+=======
+export default App
+>>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2

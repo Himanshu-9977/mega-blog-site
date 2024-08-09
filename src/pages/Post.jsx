@@ -7,7 +7,10 @@ import { useSelector } from "react-redux";
 
 export default function Post() {
     const [post, setPost] = useState(null);
+<<<<<<< HEAD
     const [loading, setLoading] = useState(true);
+=======
+>>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2
     const { slug } = useParams();
     const navigate = useNavigate();
 
@@ -20,7 +23,10 @@ export default function Post() {
             appwriteService.getPost(slug).then((post) => {
                 if (post) setPost(post);
                 else navigate("/");
+<<<<<<< HEAD
                 setLoading(false);
+=======
+>>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2
             });
         } else navigate("/");
     }, [slug, navigate]);
@@ -34,6 +40,7 @@ export default function Post() {
         });
     };
 
+<<<<<<< HEAD
     if (loading) {
         return (
             <div className="flex justify-center items-center h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
@@ -59,12 +66,33 @@ export default function Post() {
                                 </Button>
                             </Link>
                             <Button bgColor="bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:from-red-500 hover:to-red-700" onClick={deletePost}>
+=======
+    return post ? (
+        <div className="py-8">
+            <Container>
+                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+                    <img
+                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        alt={post.title}
+                        className="rounded-xl"
+                    />
+
+                    {isAuthor && (
+                        <div className="absolute right-6 top-6">
+                            <Link to={`/edit-post/${post.$id}`}>
+                                <Button bgColor="bg-green-500" className="mr-3">
+                                    Edit
+                                </Button>
+                            </Link>
+                            <Button bgColor="bg-red-500" onClick={deletePost}>
+>>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2
                                 Delete
                             </Button>
                         </div>
                     )}
                 </div>
                 <div className="w-full mb-6">
+<<<<<<< HEAD
                     <h1 className="text-4xl font-bold text-gray-200 tracking-wide">{post.title}</h1>
                 </div>
                 <div className="prose prose-lg max-w-none text-gray-300">
@@ -78,3 +106,14 @@ export default function Post() {
         </div>
     );
 }
+=======
+                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                </div>
+                <div className="browser-css">
+                    {parse(post.content)}
+                    </div>
+            </Container>
+        </div>
+    ) : null;
+}
+>>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2
