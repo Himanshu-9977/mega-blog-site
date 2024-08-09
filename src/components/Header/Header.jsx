@@ -20,12 +20,7 @@ const Header = () => {
       <Container>
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-<<<<<<< HEAD
             <Logo width="100" className="text-blue-500" />
-=======
-            <Logo width="40" className="text-blue-500" />
-            <span className="text-xl font-semibold">YourBlog</span>
->>>>>>> 248a250550171b53be0fb7f2bce8dc1a0d021ce2
           </Link>
           <ul className="flex items-center space-x-4">
             {navItems.map((item) =>
